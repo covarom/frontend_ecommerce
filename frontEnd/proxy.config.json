@@ -1,7 +1,8 @@
 {
-    "api/*":{
+    "/test/*":{
         "target":"https://api-backend.herokuapp.com/",
         "secure":false,
-        "logLevel":"debug"
+        "logLevel":"debug",
+        "changeOrigin":true
     }
 }
