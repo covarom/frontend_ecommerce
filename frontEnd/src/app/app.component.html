@@ -1,16 +1,10 @@
-<h1>
-  Hello
-</h1>
-<div id="1" class="item new col-md-4" *ngFor="let item of datas">
-  <a >
-    <div class="featured-item">
-      <img src="{{item.image}}">
-      <h4>{{item.id}}</h4>
-      <h6>${{item.description}}</h6>
-      <h4>{{item.title}}</h4>
-      <h4>{{item.ingredients}}</h4>
-    </div>
-  </a>
-</div>
-<h1>Hehe</h1>
-<button (click)="getApi()">Click on me!!!</button>
+<!-- <app-preloader></app-preloader> -->
+<app-header-container></app-header-container>
+<app-hero></app-hero>
+<app-trending-product></app-trending-product>
+<app-call-action></app-call-action>
+<app-banner></app-banner>
+<app-shipping></app-shipping>
+<app-footer></app-footer>
+<!-- <app-login></app-login> -->
+<router-outlet></router-outlet>
