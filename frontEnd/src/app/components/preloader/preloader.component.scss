@@ -9,6 +9,11 @@
     overflow: hidden;
 }
 
+.preloader-hide {
+    opacity: 0;
+    display: none;
+}
+
 .preloader-inner {
     position: absolute;
     top: 50%;

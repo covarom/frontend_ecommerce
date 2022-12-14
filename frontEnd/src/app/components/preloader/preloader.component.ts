@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-preloader',
@@ -7,23 +7,17 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 })
 export class PreloaderComponent {
 
-  // constructor(private elRef: ElementRef) { }
+
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
   @HostListener('window:load')
-  onLoad() {
-    console.log('is window:load');
+  check: boolean = false;
+
+  NgOnInit() { }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.check = true
+    }, 2000);
   }
-
-
-
-  // NgOnInit(){
-  //   this.window.onload = () => {
-  //     window.setTimeout(this.fadeout, 500);
-  //   }
-  // }
-
-  //  fadeout() {
-  //   let opacity: any = this.elRef.nativeElement.querySelector('.preloader').style.opacity = '0';
-  //   let display: any = this.elRef.nativeElement.querySelector('.preloader').style.display = 'none';
-  // }
 }
