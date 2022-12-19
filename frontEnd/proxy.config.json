@@ -1,8 +1,14 @@
 {
-    "/test/*":{
-        "target":"https://api-backend.herokuapp.com/",
-        "secure":false,
-        "logLevel":"debug",
-        "changeOrigin":true
-    }
+  "/test/*": {
+    "target": "https://api-backend.herokuapp.com/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/*": {
+    "target": "https://api-backend.herokuapp.com/api/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
 }

@@ -4,15 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderContainerComponent } from './components/header-container/header-container.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { TrendingProductComponent } from './components/trending-product/trending-product.component';
-import { CallActionComponent } from './components/call-action/call-action.component';
-import { BannerComponent } from './components/banner/banner.component';
-import { ShippingComponent } from './components/shipping/shipping.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PreloaderComponent } from './components/preloader/preloader.component';
+import { HeaderContainerComponent } from './components/customerView/landingPage/header-container/header-container.component';
+import { HeroComponent } from './components/customerView/landingPage/hero/hero.component';
+import { TrendingProductComponent } from './components/customerView/landingPage/trending-product/trending-product.component';
+import { CallActionComponent } from './components/customerView/landingPage/call-action/call-action.component';
+import { BannerComponent } from './components/customerView/landingPage/banner/banner.component';
+import { ShippingComponent } from './components/customerView/landingPage/shipping/shipping.component';
+import { FooterComponent } from './components/customerView/landingPage/footer/footer.component';
+import { PreloaderComponent } from './components/customerView/preloader/preloader.component';
 import { LoginComponent } from './components/login/login.component';
+import { LandingPageComponent } from './components/customerView/landingPage/landing-page.component';
+import { ProductDetailsComponent } from './components/customerView/productDetails/product-details.component';
+import { BreadcrumsComponent } from './components/customerView/productDetails/breadcrums/breadcrums.component';
+import { ItemDetailsComponent } from './components/customerView/productDetails/item-details/item-details.component';
+import { ReviewModalComponent } from './components/customerView/productDetails/review-modal/review-modal.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +30,18 @@ import { LoginComponent } from './components/login/login.component';
     ShippingComponent,
     FooterComponent,
     PreloaderComponent,
-    LoginComponent
+    LoginComponent,
+    LandingPageComponent,
+    ProductDetailsComponent,
+    BreadcrumsComponent,
+    ItemDetailsComponent,
+    ReviewModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
