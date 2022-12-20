@@ -6,7 +6,7 @@
     "changeOrigin": true
   },
   "/api/*": {
-    "target": "https://api-backend.herokuapp.com/api/",
+    "target": "https://api-backend.herokuapp.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

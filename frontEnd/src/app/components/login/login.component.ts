@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from '../../models/user';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
+import { RestApiService } from 'src/app/services/rest-api.service';
+import { UserInfo } from '../../models/user';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +15,12 @@ import { User } from '../../models/user';
 export class LoginComponent {
   @ViewChild('loginForm')
   loginForm!: NgForm;
-  constructor(private http: HttpClient) { }
-  user?: User;
+
+  constructor(private rest: RestApiService,
+    private data: DataService,
+    private router: Router) { }
+  user: UserInfo;
+
   // @Input() showMe: boolean = true;
   // toggleLoginModal() {
   //   this.showMe = !this.showMe
@@ -24,10 +32,6 @@ export class LoginComponent {
   }
 
 
-  async login() {
-
-  }
-
   onSubmit() {
     if (!this.loginForm.value) {
       console.log('invalid value');
@@ -36,9 +40,23 @@ export class LoginComponent {
     console.log(this.loginForm.value);
   }
 
+  validate() {
+    return true;
+  }
 
-  // getApi():Observable<coffee>{
-  //   return this.http.get<coffee>('/login').pipe(
-  //     );
-  // }
+  async login() {
+    if (this.validate()) {
+      this.rest.post('/api/login', this.user)
+        .then(data => {
+          let value = data as { user: string, token: string };
+          console.log(value);
+          localStorage.setItem('token', value.token);
+          this.router.navigate([''])
+        })
+        .catch(error => {
+          this.data.error(error['message']);
+          console.log(error);
+        })
+    }
+  }
 }
