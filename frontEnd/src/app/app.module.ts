@@ -19,6 +19,8 @@ import { BreadcrumsComponent } from './components/customerView/productDetails/br
 import { ItemDetailsComponent } from './components/customerView/productDetails/item-details/item-details.component';
 import { ReviewModalComponent } from './components/customerView/productDetails/review-modal/review-modal.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductComponent } from './components/customerView/landingPage/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,13 +37,15 @@ import { FormsModule } from '@angular/forms';
     ProductDetailsComponent,
     BreadcrumsComponent,
     ItemDetailsComponent,
-    ReviewModalComponent
+    ReviewModalComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

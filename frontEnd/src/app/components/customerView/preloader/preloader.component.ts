@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-preloader',
@@ -8,9 +8,7 @@ import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 export class PreloaderComponent {
 
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
-
-  @HostListener('window:load')
+  constructor() { }
   check: boolean = false;
 
   NgOnInit() { }
