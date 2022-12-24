@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Product } from './../../../../models/product';
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { RestApiService } from 'src/app/services/rest-api.service';
 
 @Injectable()
 @Component({
@@ -10,26 +9,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  products$: Observable<Product[]>;
   products: Product[] = [];
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private rest: RestApiService) { }
 
   ngOnInit(): void {
     this.getProductList();
-    console.log(this.products);
 
-  }
-
-  getApiProductList(): Observable<Product> {
-    return this.http.get<Product>('api/getAllProduct').pipe();
   }
 
   getProductList() {
-    this.getApiProductList().subscribe((observer: any) => {
-      this.products = observer;
-      console.log('products', this.products);
+    this.rest.getList('api/getAllProduct').subscribe((res: any) => {
+      this.products = res;
     })
   }
 }

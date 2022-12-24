@@ -71,13 +71,17 @@
 .breadcrumbs .breadcrumb-nav li {
   display: inline-block;
   position: relative;
-  padding-right: 14px;
-  margin-right: 14px;
+  // padding-right: 14px;
+  // margin-right: 14px;
   text-transform: capitalize;
 }
 
+fa-icon {
+  margin: 0 14px 0 14px;
+}
+
 .breadcrumbs .breadcrumb-nav li:after {
-  content: "\ea62";
+  // content: "\ea62";
   font-family: lineIcons;
   font-size: 12px;
   position: absolute;
