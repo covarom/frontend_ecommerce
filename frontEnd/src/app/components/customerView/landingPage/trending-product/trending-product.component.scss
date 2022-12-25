@@ -1,7 +1,19 @@
 .trending-product {
   background-color: #f9f9f9;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 .trending-product .section-title {
   margin-bottom: 20px;
+}
+
+.section-title p {
+  color: #888;
+}
+
+.productList {
+  border: 2px solid green;
+  display: block;
 }

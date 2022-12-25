@@ -1,6 +1,7 @@
 import { Product } from './../../../../models/product';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { RestApiService } from 'src/app/services/rest-api.service';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable()
 @Component({
@@ -9,6 +10,7 @@ import { RestApiService } from 'src/app/services/rest-api.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+  faCartShopping = faCartShopping;
   products: Product[] = [];
 
   constructor(private rest: RestApiService) { }
