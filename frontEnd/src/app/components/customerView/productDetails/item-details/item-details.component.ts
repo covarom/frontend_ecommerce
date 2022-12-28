@@ -22,16 +22,23 @@ export class ItemDetailsComponent {
     private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    this.getProduct(this.route.snapshot.params["id"]);
+    // this.getProduct(this.route.snapshot.params["id"]);
+    // this.getProduct(this.id);
+    this.id = this.route.snapshot.params["id"];
     console.log(this.id);
-    console.log(this.product);
+    this.rest.getItem('api/getProductById?id=', this.id).subscribe((res: any) => {
+      this.product = res
+      console.log(this.product);
+    })
+    // console.log(this.product);
   }
 
-  getProduct(id: any) {
-    this.rest.getItem('api/getAllProduct', this.id).subscribe((res: any) => {
-      this.product = res;
-    })
-  }
+  // getProduct(id: any) {
+  //   this.rest.getItem('api/getAllProduct', id).subscribe((res: any) => {
+  //     this.product = res;
+  //     console.log(this.product);
+  //   })
+  // }
 
 
 

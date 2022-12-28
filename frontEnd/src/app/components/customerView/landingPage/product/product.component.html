@@ -7,7 +7,7 @@
             <img src="{{product.imageList[0].url}}" alt="#">
           </div>
           <div class="button btn-primary">
-            <a [routerLink]="['/productDetail/{product.id}']" routerLinkActive="router-link-active" class="btn">View
+            <a routerLink="/productDetail/{{product.id}}" routerLinkActive="router-link-active" class="btn">View
               Details</a>
           </div>
         </div>

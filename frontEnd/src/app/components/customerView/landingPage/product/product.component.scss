@@ -3,7 +3,6 @@
  }
 
  .single-product {
-   // border: 1px solid red;
    border-radius: 4px;
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
@@ -12,7 +11,8 @@
    background: #fff;
    width: 20em;
    height: 30em;
-   margin-right: 5px;
+   margin: 0 20px 20px 0;
+   text-align: left;
  }
 
  .single-product .product-image {
@@ -21,8 +21,8 @@
  }
 
  .product-image img {
-   height: 100%;
-   width: 100%;
+   height: 320px;
+   width: 320px;
  }
 
  .single-product .product-image .sale-tag {
@@ -94,7 +94,9 @@
 
  .product-info {
    padding: 20px;
-   background-color: rgb(239, 233, 233);
+   //  background-color: rgb(239, 233, 233);
+   background-color: #fff;
+
  }
 
  .single-product .product-info .category {
