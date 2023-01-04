@@ -22,6 +22,12 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductComponent } from './components/customerView/landingPage/product/product.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SideBarComponent } from './components/adminView/side-bar/side-bar.component';
+import { AdminComponent } from './components/adminView/admin.component';
+import { CategoriesListComponent } from './components/adminView/categories-list/categories-list.component';
+import { SublevelMenuComponent } from './components/adminView/side-bar/sublevel-menu.component';
+import { DashboardComponent } from './components/adminView/dashboard/dashboard.component';
+import { CategoryComponent } from './components/adminView/category/category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +45,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BreadcrumsComponent,
     ItemDetailsComponent,
     ReviewModalComponent,
-    ProductComponent
+    ProductComponent,
+    SideBarComponent,
+    AdminComponent,
+    CategoriesListComponent,
+    SublevelMenuComponent,
+    DashboardComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

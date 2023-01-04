@@ -1,0 +1,17 @@
+<div class="single-product row">
+  <div class="col-md-4" *ngFor="let product of products">
+    <div class="product-image">
+      <div>
+        <img src="{{product.imageList[0].url}}" alt="#">
+      </div>
+    </div>
+    <div class="product-info">
+      <h4 class="title">
+        <a>{{product.name}}</a>
+      </h4>
+      <div class="price">
+        <span>$ {{product.price}}</span>
+      </div>
+    </div>
+  </div>
+</div>
