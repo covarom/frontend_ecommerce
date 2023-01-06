@@ -1,5 +1,5 @@
 .sidenav {
-  background: #263238;
+  background: #081828;
   transition: all .5s ease;
   position: fixed;
   z-index: 1;
@@ -79,7 +79,7 @@
       transition: all .3s ease;
 
       .sidenav-link-icon {
-        font-size: 22px;
+        font-size: 24px;
         width: 2rem;
         min-width: 2rem;
         margin: 0 0.5rem;
@@ -149,7 +149,7 @@
       }
 
       .sublevel-link-text {
-        margin-left: 0.8rem;
+        margin-left: 0.2rem;
       }
     }
 

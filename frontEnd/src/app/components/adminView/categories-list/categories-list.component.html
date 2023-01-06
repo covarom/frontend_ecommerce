@@ -1,16 +1,23 @@
-<div class="single-product row">
-  <div class="col-md-4" *ngFor="let product of products">
-    <div class="product-image">
+<div class="singleProductContainer" *ngFor="let product of products">
+  <div class="col-md-1">
+    <div class="single-product">
       <div>
-        <img src="{{product.imageList[0].url}}" alt="#">
-      </div>
-    </div>
-    <div class="product-info">
-      <h4 class="title">
-        <a>{{product.name}}</a>
-      </h4>
-      <div class="price">
-        <span>$ {{product.price}}</span>
+        <div class="product-image">
+          <div>
+            <img src="{{product.imageList[0].url}}" alt="#">
+          </div>
+          <div class="button btn-primary">
+            <a routerLink="" routerLinkActive="router-link-active" class="btn">Edit</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4 class="title">
+            <a>{{product.name}}</a>
+          </h4>
+          <div class="price">
+            <span>$ {{product.price}}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

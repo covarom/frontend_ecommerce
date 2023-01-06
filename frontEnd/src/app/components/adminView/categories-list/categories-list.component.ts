@@ -15,19 +15,17 @@ export class CategoriesListComponent {
   id: string;
 
   constructor(private rest: RestApiService,
-    private route: ActivatedRoute) { }
+    private activeRoute: ActivatedRoute,
+    private route: Router) { }
 
   ngOnInit(): void {
-    this.getProductByCategoryId(this.route.snapshot.params["id"]);
-    this.id = this.route.snapshot.params["id"];
-    console.log(this.id);
-    console.log(this.categories);
+    this.id = this.activeRoute.snapshot.params["id"];
+    this.getProductByCategoryId(this.id);
   }
 
   getProductByCategoryId(id: any) {
     this.rest.getItem('api/getProductByCategory?category_id=', id).subscribe((res: any) => {
       this.products = res
-      console.log(this.products);
     })
   }
 }

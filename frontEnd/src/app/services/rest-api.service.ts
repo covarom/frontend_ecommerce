@@ -40,7 +40,7 @@ export class RestApiService {
   // Get single Product data by ID
   getItem(link: string, id: string): Observable<Product> {
     return this.http
-      .get<Product>(link + '/' + id)
+      .get<Product>(link + id)
       .pipe(
         retry(2),
         catchError(this.handleError)

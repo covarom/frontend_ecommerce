@@ -37,8 +37,8 @@ import { RestApiService } from 'src/app/services/rest-api.service';
          [routerLinkActiveOptions]="{exact : true}"
         >
            <i class="sublevel-link-icon fa fa-circle"></i>
-           <div *ngFor="let category of categories">
-             <span class="sublevel-link-text" *ngIf="collapsed">{{category.name}}</span>
+           <div>
+             <span class="sublevel-link-text" *ngIf="collapsed">{{item.label}}</span>
            </div>
         </a>
         <div *ngIf="item.items && item.items.length > 0">
@@ -82,13 +82,6 @@ export class SublevelMenuComponent implements OnInit {
   constructor(public router: Router, private rest: RestApiService) { }
 
   ngOnInit(): void {
-    this.getProductList();
-  }
-
-  getProductList() {
-    this.rest.getList('api/getAllCategory').subscribe((res: any) => {
-      this.categories = res;
-    });
   }
 
   handleClick(item: any): void {
