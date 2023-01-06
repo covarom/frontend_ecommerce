@@ -1,16 +1,2 @@
-<h1>
-  Hello
-</h1>
-<div id="1" class="item new col-md-4" *ngFor="let item of datas">
-  <a >
-    <div class="featured-item">
-      <img src="{{item.image}}">
-      <h4>{{item.id}}</h4>
-      <h6>${{item.description}}</h6>
-      <h4>{{item.title}}</h4>
-      <h4>{{item.ingredients}}</h4>
-    </div>
-  </a>
-</div>
-<h1>Hehe</h1>
-<button (click)="getApi()">Click on me!!!</button>
+<app-side-bar (onToggleSideNav)="onToggleSideNav($event)"></app-side-bar>
+<app-admin [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-admin>

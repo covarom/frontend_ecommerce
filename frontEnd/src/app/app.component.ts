@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core'
-import {Observable,of} from 'rxjs';
-import { coffee } from './cofee';
+import { Observable, of } from 'rxjs';
+interface SideNavToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -13,19 +16,14 @@ import { coffee } from './cofee';
 })
 
 export class AppComponent {
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
   title = 'frontEnd';
-  datas:coffee[]=[];
-  getApi():Observable<coffee>{
-    return this.http.get<coffee>('/test/list').pipe(
-      );
-}
-ngOnInit(): void {
-  this.getCoffe();
-}
-  getCoffe(){
-    this.getApi().subscribe((res:any) => {
-      this.datas=res
-    })
+
+  isSideNavCollapsed = false;
+  screenWidth = 0;
+
+  onToggleSideNav(data: SideNavToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapsed = data.collapsed;
   }
 }

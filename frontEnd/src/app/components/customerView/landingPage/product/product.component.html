@@ -1,0 +1,29 @@
+<div class="single-product row">
+  <div class="col-md-4" *ngFor="let product of products">
+    <div class="product-image">
+      <div>
+        <img src="{{product.imageList[0].url}}" alt="#">
+      </div>
+      <div class="button">
+        <a [routerLink]="['/productDetail/{product.id}']" routerLinkActive="router-link-active" class="btn"><i
+            class="lni lni-cart"></i> Add to Cart</a>
+      </div>
+    </div>
+    <div class="product-info">
+      <h4 class="title">
+        <a>{{product.name}}</a>
+      </h4>
+      <!-- <ul class="review">
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star"></i></li>
+      <li><span>4.0 Review(s)</span></li>
+    </ul> -->
+      <div class="price">
+        <span>$ {{product.price}}</span>
+      </div>
+    </div>
+  </div>
+</div>
