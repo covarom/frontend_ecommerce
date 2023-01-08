@@ -20,25 +20,30 @@ export class LoginComponent {
     private data: DataService,
     private router: Router) { }
   user: UserInfo;
-
-  // @Input() showMe: boolean = true;
-  // toggleLoginModal() {
-  //   this.showMe = !this.showMe
-  // }
-
+  userInfo = {
+    userName: 'hunganh',
+    password: 'ha130502',
+    rememberMe: true
+  }
+  usernamePattern = /^[a-z]{6,32}$/i;
+  passwordPattern = /^(?=.*[!@#$%^&*]+)[a-z0-9!@#$%^&*]{6,32}$/;
 
   ngOnInit() {
 
   }
-
-
-  onSubmit() {
-    if (!this.loginForm.value) {
-      console.log('invalid value');
-      return;
-    }
-    console.log(this.loginForm.value);
+  onSubmit(form: NgForm): void { //=> NgSubmit
+    console.log(form);
+    throw new Error('Something went wrong')
   }
+
+
+  // onSubmit() {
+  //   if (!this.loginForm.value) {
+  //     console.log('invalid value');
+  //     return;
+  //   }
+  //   console.log(this.loginForm.value);
+  // }
 
   validate() {
     return true;
